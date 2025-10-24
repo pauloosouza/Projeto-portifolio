@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ======= VÍDEO DE FUNDO ======= */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* ======= CAMADA ESCURA ======= */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+/* ======= HEADER ======= */
+header {
+  width: 100%;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+header .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.logo h2 {
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #1a8cff;
+}
+
+.btn-talk {
+  background: #1a8cff;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-talk:hover {
+  background: #0f6bd6;
+}
+
+/* ======= MENU HAMBÚRGUER ======= */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+
+/* ======= HERO ======= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 6rem 1rem 0 3rem;
+  gap: 50px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text .tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  color: #1a8cff;
+  font-weight: 700;
+}
+
+/* Animação */
+
+.hero-text h2 span {
+  color: #1a8cff;
+  border-right: 2px solid #00ffc8; /* cursor piscando */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 0ch;
+  animation: typing 10s steps(24) 1s infinite alternate, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+      0% {
+        width: 0ch;
+      }
+      50% {
+        width: 24ch; /* número de caracteres do texto */
+      }
+      100% {
+        width: 0ch;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+
+.hero-text p {
+  margin-top: 20px;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 450px;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-primary {
+  background: #1a8cff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0f6bd6;
+}
+
+.socials i {
+  color: #fff;
+  background: #1a8cff;
+  padding: 0.7rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
+.socials i:hover {
+  background: #175b9e;
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 992px) {
+  header {
+    padding: 20px 40px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 40px 60px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-text p {
+    text-align: justify;
+    color: #fff;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-img img {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Esconde o menu por padrão */
+  nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    z-index: 9;
+  }
+
+  /* Mostra o menu quando o TypeScript adiciona .active */
+  nav.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  /* Animação suave ao abrir */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 10;
+  }
+
+  .btn-talk {
+    display: none;
+  }
+
+  /* Ícone muda para “X” quando o menu abre */
+  .menu-toggle.open i::before {
+    content: "\f00d"; /* ícone de X */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+  }
+}
