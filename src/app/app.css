@@ -11,26 +11,17 @@ body {
   color: #fff;
   overflow-x: hidden;
 }
-
-/* ======= VÍDEO DE FUNDO ======= */
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
+main{
+  border-bottom:1px solid #d1d1d134 ;
 }
-
-/* ======= CAMADA ESCURA ======= */
+  /* ======= CAMADA ESCURA ======= */
 .video-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.893);
   z-index: -1;
 }
 
@@ -82,7 +73,7 @@ nav ul li a:hover {
 }
 
 .btn-talk {
-  background: #1a8cff;
+  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
   padding: 10px 20px;
   color: #fff;
   border-radius: 8px;
@@ -92,7 +83,7 @@ nav ul li a:hover {
 }
 
 .btn-talk:hover {
-  background: #0f6bd6;
+  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
 }
 
 /* ======= MENU HAMBÚRGUER ======= */
@@ -145,7 +136,11 @@ nav ul li a:hover {
 /* Animação */
 
 .hero-text h2 span {
-  color: #1a8cff;
+
+  background: -webkit-linear-gradient(#77d7f1 , #000851 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   border-right: 2px solid #00ffc8; /* cursor piscando */
   white-space: nowrap;
   overflow: hidden;
@@ -188,14 +183,14 @@ nav ul li a:hover {
 }
 
 .btn-primary {
-  background: #1a8cff;
+  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
   padding: 12px 24px;
   border-radius: 8px;
   color: #fff;
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s;
-}
+  box-shadow: 7px 8px 10px 0px #264c70;}
 
 .btn-primary:hover {
   background: #0f6bd6;
@@ -203,7 +198,8 @@ nav ul li a:hover {
 
 .socials i {
   color: #fff;
-  background: #1a8cff;
+  border:solid 3px #175b9e;
+  background-color: #22578d65;
   padding: 0.9rem;
   border-radius: 50%;
   margin: 0.5rem;
@@ -228,6 +224,9 @@ nav ul li a:hover {
 
 /* ======= RESPONSIVE ======= */
 @media (max-width: 992px) {
+   .btn-primary{
+    width: 100%;
+  }
   header {
     padding: 20px 40px;
   }
@@ -260,16 +259,17 @@ nav ul li a:hover {
   }
 
   .buttons {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .hero-img img {
-    width: 100vh;
+    width: 100%;
   }
-}
-
-@media (max-width: 768px) {
-  /* Esconde o menu por padrão */
+   .btn-primary{
+    width: 100%;
+  }
   nav {
     position: absolute;
     top: 80px;
@@ -323,3 +323,51 @@ nav ul li a:hover {
     font-weight: 900;
   }
 }
+
+/* Aqui entra estilo do wpp flutuante*/
+
+.whatsapp-float {
+  position: fixed;
+  right: clamp(12px, 3vw, 30px);   /* margem lateral adaptável */
+  bottom: clamp(12px, 3vw, 30px);  /* margem inferior adaptável */
+  width: clamp(48px, 6vw, 70px);   /* tamanho mínimo/médio/máximo */
+  height: clamp(48px, 6vw, 70px);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #25D366, #128C7E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* efeito ao passar o mouse ou tocar */
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+/* ícone interno ajusta-se automaticamente */
+.whatsapp-float svg {
+  width: 55%;
+  height: 55%;
+}
+
+/* animação opcional de "pulso" para destacar */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.whatsapp-float.pulse {
+  animation: pulse 2.5s infinite;
+}
+
+/* acessibilidade extra: remove foco azul padrão em mobile */
+.whatsapp-float:focus-visible {
+  outline: none;
+}
+

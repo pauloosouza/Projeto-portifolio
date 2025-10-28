@@ -1,0 +1,212 @@
+:root {
+    --text-color: #e0e0e0;
+    --primary-color: #8f63ff;
+    --secondary-color: #1c1b23;
+    --accent-color: #c4b3ff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 5%;
+    flex-direction: row-reverse;
+}
+
+.profile {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.profile img {
+    width: 60%;
+    object-fit: cover;
+    border-bottom: 1px solid #0f6bd6;
+    filter: drop-shadow(-30px -10px 40px #4444dd);
+  }
+
+.signature {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    margin: 1rem 0;
+}
+
+.contact-info {
+    list-style: none;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.contact-info li {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+
+.intro {
+    flex: 2;
+    max-width: 650px;
+}
+
+.subheading {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.intro h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.intro h1 span.name {
+    color: #0f6bd6;
+}
+
+.description {
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    padding: 10px;
+    text-align: justify;
+    font-family: sans-serif;
+}
+mark{
+ background: #266a85;
+  background: linear-gradient(163deg, rgba(38, 106, 133, 1) 0%, rgba(36, 86, 179, 1) 34%, rgba(35, 149, 153, 1) 100%);  color: #fff;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn.primary {
+  background: #266a85;
+  background: linear-gradient(163deg, rgba(38, 106, 133, 1) 0%, rgba(36, 86, 179, 1) 34%, rgba(35, 149, 153, 1) 100%);
+  color: white;
+  width: 100%;
+text-align: center;
+}
+
+.btn.primary:hover {
+    background-color: #a083ff;
+}
+
+/* Works Section */
+.works {
+    padding: 2rem 14%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.work-card {
+    background-color: #14141d;
+    border: 1px solid #2c2c3a;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: -5px -5px 30px 5px #25283b;
+
+}
+
+.work-card h4 {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.work-card h3 {
+    font-family: var(--font-heading);
+    margin: 0.5rem 0 1rem;
+    color: white;
+}
+
+.work-card p {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 728px) {
+  .hero{
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .subheading {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+  }
+  .intro h1{
+    font-size: 2rem;
+  }
+  .description{
+    font-size: 1.3rem;
+    text-align: justify;
+
+  }
+  .profile img{
+    width:100%;
+  }
+  .work-card{
+    background: #020024;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(10, 10, 59, 1) 46%, rgba(21, 61, 71, 1) 100%);
+  color: #fff;
+  border: solid 1px #fff;
+  }
+}
+
