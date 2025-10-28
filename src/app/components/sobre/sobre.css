@@ -12,7 +12,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+  border-bottom: 1px solid #0f6cd66e;
+}
 
 .logo {
     font-family: var(--font-heading);
@@ -207,6 +209,13 @@ text-align: center;
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(10, 10, 59, 1) 46%, rgba(21, 61, 71, 1) 100%);
   color: #fff;
   border: solid 1px #fff;
+  }
+  .works{
+    padding: 2rem 4%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: justify;
+
   }
 }
 
