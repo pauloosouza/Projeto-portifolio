@@ -176,4 +176,5 @@ export class SkillComponent implements AfterViewInit {
       }, 120);
     });
   }
+
 }

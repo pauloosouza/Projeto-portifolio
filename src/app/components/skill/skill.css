@@ -167,3 +167,136 @@ body {
     font-size: 1.2rem;
   }
 }
+
+/* INFERIOR */
+
+.pos-skill {
+  background: linear-gradient(135deg, #090935, #1a1a4a);
+  color: #fff;
+  padding: 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pos-skill::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+  animation: bgMove 10s infinite linear;
+  z-index: 0;
+}
+
+@keyframes bgMove {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pos-skill-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Texto */
+.pos-skill-text {
+  flex: 1 1 400px;
+  animation: slideInLeft 1s ease forwards;
+}
+
+.pos-skill-text h2 {
+  background: -webkit-linear-gradient(#eee, #1166bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+.pos-skill-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Ícones / Badges */
+.pos-skill-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  flex: 1 1 400px;
+  animation: slideInRight 1s ease forwards;
+}
+
+.skill-badge {
+  background: linear-gradient(135deg, #3b3b5c, #27273d);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Efeitos animados de hover */
+.skill-badge:hover {
+  transform: translateY(-8px) rotateX(10deg) rotateY(5deg) scale(1.05);
+  background: linear-gradient(135deg, #e52e71, #ff8a00);
+  box-shadow: 0 10px 25px rgba(255, 138, 0, 0.4);
+}
+
+/* Animações */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pos-skill-inner {
+    text-align: center;
+  }
+
+  .pos-skill-text h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .pos-skill-text{
+    text-align: justify;
+  }
+
+  .skill-badge {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+}

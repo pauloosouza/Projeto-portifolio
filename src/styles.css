@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 .background-video {
   position: fixed;
   top: 0;
