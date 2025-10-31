@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import * as core from '@angular/core';
 import { SobreComponent } from "./components/sobre/sobre";
 import { SkillComponent } from "./components/skill/skill";
+import { Projetos } from "./components/projetos/projetos";
 
 @core.Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SobreComponent, SkillComponent],
+  imports: [CommonModule, SobreComponent, SkillComponent, Projetos],
   templateUrl: './app.html',
   styleUrls: ['./app.css'] // ✅ Mantido no plural
 })

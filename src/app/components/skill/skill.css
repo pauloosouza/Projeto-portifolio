@@ -250,6 +250,9 @@ body {
   transform-style: preserve-3d;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+#angula{
+    background: linear-gradient(135deg, #e52e71, #ff8a00);
+}
 
 /* Efeitos animados de hover */
 .skill-badge:hover {

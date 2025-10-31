@@ -1,0 +1,125 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+.git{
+    width: 2rem;
+    margin-right: 1rem;
+}
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    /* ===== CONTAINER PRINCIPAL ===== */
+    .projects-box {
+      width: 90%;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.2s ease forwards;
+      text-align: center;
+
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== TÍTULO ===== */
+    .projects-box h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #00e0ff;
+      text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+    }
+
+    .projects-box p.description {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #cfe9ff;
+    }
+
+    /* ===== LISTA DE PROJETOS ===== */
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-item {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1.5rem;
+      border-radius: 16px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+
+    }
+
+    .project-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 224, 255, 0.2);
+    }
+
+    .project-item h3 {
+      color: #00e0ff;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .project-item p {
+      color: #d6f0ff;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .project-item a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #00e0ff;
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .project-item a:hover {
+      background: #00bcd4;
+      transform: scale(1.05);
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 600px) {
+      .projects-box h1 {
+        font-size: 1.8rem;
+      }
+      .projects-box p.description {
+        font-size: 1rem;
+      }
+    }
