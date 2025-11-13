@@ -1,0 +1,134 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Section */
+.info-section {
+  min-height: 80vh;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #050505e8, #0d0d0def, #141414e4);
+  position: relative;
+  color: #fff;
+  text-align:center;
+  overflow:hidden;
+}
+.info { max-width:900px; margin:0 auto 2rem; z-index:1; position:relative; }
+.info h1{ font-size:2.6rem; margin-bottom:.8rem; }
+.info p{ color:#d0d0d0; line-height:1.6; max-width:750px; margin:0 auto; }
+
+/* Slider container */
+#experiencia { display:flex; justify-content:center; align-items:center; }
+.slider-container {
+  width: 80%;
+  max-width:1100px;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow: 0 30px 50px rgba(0,0,0,0.35);
+  background:#111;
+}
+
+/* Slider (flex, dynamic widths) */
+.slider {
+  display:flex;
+  will-change: transform;
+  transition: transform 700ms cubic-bezier(.22,.9,.28,1);
+}
+
+/* Each slide takes full container width (JS sets flex-basis dynamically) */
+.slide {
+  flex: 0 0 100%;
+  position:relative;
+  opacity:0;
+  transform: scale(.98);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.slide.active { opacity:1; transform: scale(1); }
+
+.slide img {
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  display:block;
+  border-radius:12px;
+  transition: transform 6s ease;
+}
+.slide.active img { transform: scale(1.04); }
+
+/* Slide content */
+.slide-content {
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:24px;
+  background: rgba(0,0,0,0.6);
+  padding:18px;
+  border-radius:10px;
+  color:#fff;
+  opacity:0;
+  transform: translateY(18px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.slide.active .slide-content { opacity:1; transform: translateY(0); }
+.slide-content h2 { font-size:1.4rem; margin-bottom:8px; }
+.slide-content p { font-size:0.95rem; line-height:1.4; margin-bottom:10px; }
+
+/* Button */
+.btn-saiba-mais {
+  background: linear-gradient(90deg,#00f2ff,#0077ff);
+  background-size:200%;
+  color:#fff; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background-position .4s ease;
+}
+.btn-saiba-mais:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,123,255,.18); background-position:right; }
+
+/* Arrows */
+.arrow {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px; height:48px; border-radius:50%;
+  border:none; background: rgba(0,0,0,0.45); color:#fff; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:1.2rem;
+  z-index:10; transition: background .18s ease, transform .18s ease;
+}
+.arrow:hover { background: rgba(0,0,0,0.75); transform:translateY(-50%) scale(1.06); }
+.left-arrow{ left:14px; } .right-arrow{ right:14px; }
+
+/* Dots */
+.dots { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:11; }
+.dot { width:12px; height:12px; border-radius:50%; background: rgba(255,255,255,0.45); cursor:pointer; transition:background .2s ease; }
+.dot.active { background:#00f2ff; }
+
+/* Modal */
+.modal {
+  display:none;
+  position:fixed; inset:0; z-index:1200;
+  background: rgba(0,0,0,0.65);
+  align-items:center; justify-content:center;
+  padding:20px;
+}
+.modal.open { display:flex; }
+.modal-content {
+  background:#fff; color:#111; width:100%; max-width:640px; border-radius:10px; padding:22px; position:relative;
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+.modal-content img{ width:100%; margin-top:12px; border-radius:8px; }
+
+/* Close button */
+.close { position:absolute; top:10px; right:12px; background:transparent; border:none; font-size:1.6rem; cursor:pointer; color:#666; }
+.close:hover{ color:#000; }
+
+/* Body modal class (no scroll) */
+body.modal-open { overflow:hidden; }
+
+/* Responsive */
+@media (max-width:900px) {
+  .slide img { height:360px; }
+  .info h1 { font-size:2rem; }
+}
+@media (max-width:600px) {
+  .slider-container { width:95%; }
+  .slide img { height:260px; }
+  .slide-content { left:12px; right:12px; bottom:12px; padding:12px; }
+  .arrow { width:40px; height:40px; }
+}

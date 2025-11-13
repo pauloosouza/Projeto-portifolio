@@ -13,7 +13,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #0f2027c4, #203a43, #2c5364);
       color: #fff;
       overflow-x: hidden;
       padding-top: 4rem;
