@@ -7,19 +7,22 @@
   <title>Document</title>
 </head>
 <body>
+
+
 <main>
   <!-- 🔳 CAMADA ESCURA -->
   <div class="video-overlay"></div>
 
   <!-- NAVBAR -->
-  <header>
+
+  <header >
     <div class="container">
       <div class="logo">
         <h2><i class="fa-solid fa-code"></i> A. Paulo </h2>
       </div>
       <nav id="nav-menu">
         <ul>
-          <li><a href="#" id="inicicial"> Inicio </a></li>
+          <li><a href="#inicio"> Inicio </a></li>
           <li><a href="#sobre"> Sobre</a></li>
           <li><a href="#skill"> Skill </a></li>
           <li><a href="#projeto"> Projetos </a></li>
@@ -34,7 +37,7 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section id="inicio" class="hero">
     <div class="hero-text">
       <span class="tag"> Paulo Souza </span>
       <h1>Olá, me chamo <br> Athos Paulo Souza </h1>
@@ -72,7 +75,11 @@
 </main>
 </body>
 
-<app-sobre></app-sobre>
-<app-skill></app-skill>
-<app-projetos></app-projetos>
-<app-experiencia></app-experiencia>
+<section id="inicio" class="hero">
+   ...
+</section>
+
+<app-sobre id="sobre"></app-sobre>
+<app-skill id="skill"></app-skill>
+<app-projetos id="projeto"></app-projetos>
+<app-experiencia id="experience"></app-experiencia>

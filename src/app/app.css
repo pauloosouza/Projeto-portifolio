@@ -51,9 +51,6 @@ header .container {
   color: #fff;
   letter-spacing: 1px;
 }
-#inicicial{
-  color: #1a8cff;
-}
 
 nav ul {
   list-style: none;
@@ -66,6 +63,12 @@ nav ul li a {
   color: #fff;
   font-weight: 500;
   transition: 0.3s;
+}
+nav ul li a.active {
+  color: #1e90ff !important;
+  font-weight: bold;
+  font-size: 1rem;
+
 }
 
 nav ul li a:hover {
@@ -104,7 +107,6 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
   padding: 6rem 1rem 0 3rem;
   gap: 50px;
 }
