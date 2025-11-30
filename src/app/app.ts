@@ -4,11 +4,12 @@ import { SobreComponent } from "./components/sobre/sobre";
 import { SkillComponent } from "./components/skill/skill";
 import { Projetos } from "./components/projetos/projetos";
 import { ExperienciaComponent } from "./components/experiencia/experiencia";
+import { ContatoComponent } from "./components/contato/contato";
 
 @core.Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SobreComponent, SkillComponent, Projetos, ExperienciaComponent],
+  imports: [CommonModule, SobreComponent, SkillComponent, Projetos, ExperienciaComponent, ContatoComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -131,5 +132,9 @@ export class App implements core.AfterViewInit, core.OnDestroy {
     this.clickListeners.forEach(fn => fn());
     this.clickListeners = [];
   }
+
+  // AQUI ENTRA A FUNÇÃO DO BOTÃO CLARO E ESCURO
+
+
 
 }

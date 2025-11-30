@@ -11,6 +11,29 @@ body {
   color: #fff;
   overflow-x: hidden;
 }
+
+/* BOTÃO DE CLARO E ESCURO */
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 9999;
+  transition: .3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+
 main{
   border-bottom:1px solid #d1d1d134 ;
 }

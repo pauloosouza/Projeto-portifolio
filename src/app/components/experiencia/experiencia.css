@@ -182,6 +182,7 @@
   border-radius:12px;
   box-shadow: 2px 0 30px 4px #000;
   background:#111;
+  margin-bottom: 5rem;
 }
 
 /* Slider (flex, dynamic widths) */

@@ -1,0 +1,80 @@
+<section class="container-master">
+<div class="bg-anim"></div>
+
+<main class="stage">
+  <section class="card">
+
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+
+    <!-- LADO ESQUERDO -->
+    <aside class="visual">
+      <div class="mock">
+        <img src="assets/img/contato.png" />
+      </div>
+      <div class="title"> Fale comigo </div>
+      <div class="sub">
+        Para facilitar o contato, preparei diversas formas de falar comigo —
+        seja por e-mail, WhatsApp, Telegram, formulário, ligações ou qualquer
+        uma das minhas redes sociais. Fique à vontade para escolher o canal mais prático!
+      </div>
+    </aside>
+
+    <!-- LADO DIREITO -->
+   <div class="form-panel">
+
+  <!-- BOTÃO DE TEMA -->
+  <div class="theme-inside">
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" (change)="toggleTheme()" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+
+
+      <div class="brand-row">
+        <div class="logo">PS</div>
+        <div>
+          <strong>Contato — Paulo Souza</strong>
+          <div style="font-size:12px;color:var(--muted)">WhatsApp • Linkedin • Mensagem</div>
+        </div>
+      </div>
+
+      <h2>Vamos conversar?</h2>
+      <p style="color:var(--muted)">Envie sua mensagem e retornarei o contato.</p>
+
+      <form id="contactForm" #f="ngForm" (ngSubmit)="enviarMensagem(f)" >
+        <div class="input">
+          <input name="nome" ngModel type="text" placeholder=" " required>
+          <label class="floating">Nome completo</label>
+        </div>
+
+        <div class="input">
+          <input name="telefone" ngModel type="tel" placeholder=" " required>
+          <label class="floating">Telefone</label>
+        </div>
+
+        <div class="input">
+          <input name="email" ngModel type="email" placeholder=" " required>
+          <label class="floating">E-mail</label>
+        </div>
+
+        <div class="input full">
+          <textarea name="mensagem" ngModel placeholder=" " required></textarea>
+          <label class="floating">Mensagem</label>
+        </div>
+
+        <div class="actions full">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+          <button class="btn btn-ghost" type="reset">Cancelar</button>
+        </div>
+      </form>
+
+    </div>
+
+  </section>
+</main>
+
+<div id="toast" class="toast">Mensagem enviada com sucesso!</div>
+</section>

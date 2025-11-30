@@ -1,0 +1,315 @@
+
+/* Tema padrão (ESCURO) */
+:root {
+  --bg-color: #0d1117;
+  --text-color: #ffffff;
+}
+
+/* Tema CLARO */
+:root.light {
+  --bg-color: #f2f2f2;
+  --text-color: #1a1a1a;
+}
+
+/* Aplicando as variáveis no body */
+
+
+    *{
+      box-sizing:border-box
+    }
+
+ /* Exemplo: qualquer elemento usará as variáveis */
+.container-master,
+.form-panel,
+main,
+section {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+/* ---- ESTILO DO SWITCH ---- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #777;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: #1e90ff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+    .container-master{
+      margin:0;
+      font-family: Inter, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #0b1222 );
+      color:#e6eef8;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:4rem;
+      transition:.3s ease;
+    }
+
+    .bg-anim{
+      position:fixed;
+      inset:0;
+      background: radial-gradient(600px circle at 10% 20%, rgba(124,58,237,0.18), transparent 12%),
+      radial-gradient(500px circle at 85% 80%, rgba(6,182,212,0.12), transparent 14%);
+      animation:bgShift 10s linear infinite;
+      z-index:0;
+      opacity:.7;
+      pointer-events:none;
+    }
+    @keyframes bgShift{0%{
+      transform:translateY(0)}50%{transform:translateY(10px)}100%{transform:translateY(0)}
+    }
+
+    .stage{
+      z-index:2;width:100%;
+      max-width:1200px
+    }
+    .card{
+      display:grid;
+      grid-template-columns:520px 1fr;
+      gap:28px;
+      padding:28px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.03);
+      box-shadow:0 10px 40px rgba(2,6,23,.6);
+      backdrop-filter:blur(10px);
+      position:relative;
+    }
+
+    /* decoração */
+    .shape-1,.shape-2{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(36px);
+      opacity:.5;
+    }
+
+    .shape-1{
+      width:360px;
+      height:360px;
+      left:-120px;
+      top:-90px;
+      background:linear-gradient(180deg,#7c3aed,transparent)
+    }
+    .shape-2{
+      width:320px;
+      height:320px;
+      right:-100px;
+      bottom:-80px;
+      background:linear-gradient(180deg,#06b6d4,transparent)
+    }
+
+    /* ILUSTRAÇÃO */
+    .visual{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      gap:18px
+    }
+    .mock{
+      height:360px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#0b1222,#13223a);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .mock img{
+    max-width:80%;
+    border-radius: 10px;
+    animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+
+    .title{
+      font-size:20px;
+      font-weight:700;
+    }
+    .sub{
+      font-size:18px;
+      color:#ffffff;
+      text-align: justify;
+      font-family: cursive;
+    }
+
+
+    /* FORMULÁRIO */
+    .form-panel{
+      display:flex;
+      flex-direction:column;
+      padding:10px 6px
+    }
+
+    /* botão de tema dentro do formulário */
+    .theme-inside{
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom:10px;
+    }
+
+    #themeBtn{
+      padding:10px 18px;
+      border:none;
+      border-radius:8px;
+      font-weight:600;
+      color:#fff;
+      cursor:pointer;
+      background:linear-gradient(90deg,#7c3aed, #06b6d4);
+      box-shadow:0 4px 14px rgba(0,0,0,.25);
+      transition:.25s ease;
+    }
+    #themeBtn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 26px rgba(0,0,0,.30);
+    }
+
+    .brand-row{
+      display:flex;
+      align-items:center;
+      gap:12px
+    }
+    .logo{
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background:linear-gradient(90deg,#7c3aed,#06b6d4);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      font-weight:700
+    }
+
+    form{
+      display:grid;
+      gap:1rem;
+      margin-top:12px;
+    }
+
+    .full{grid-column:1/-1}
+
+    .input{
+      position:relative
+    }
+
+    .input input, .input textarea{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+      color:#ffffff;
+      outline:none;
+      transition:.2s ease;
+      margin-top: 10px;
+    }
+    .input textarea{
+      padding: 2.5rem;
+      margin-top: 10px;
+    }
+    .input input:focus,.input textarea:focus{
+      border-color:#06b6d4;
+      box-shadow:0 4px 18px rgba(6,182,212,0.18);
+    }
+
+    label.floating{
+      position:absolute;
+      left:14px;
+      top:12px;
+      color:#98a8c6;
+      font-size:13px;
+      pointer-events:none;
+      transition:.2s;
+      margin-top: 10px;
+    }
+    .input input:focus + label.floating,
+    .input input:not(:placeholder-shown) + label.floating,
+    .input textarea:focus + label.floating,
+    .input textarea:not(:placeholder-shown) + label.floating{
+      transform:translateY(-26px) scale(.86);
+      color:#06b6d4;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      margin-top:14px}
+    .btn{
+      flex:1;
+      padding:12px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer
+    }
+    .btn-primary{
+      background:linear-gradient(90deg, #7c3aed, #06b6d4);
+      color:#fff
+    }
+    .btn-ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.10);
+      color:#fff
+    }
+
+    .toast{
+      position:fixed;
+      bottom:22px;
+      left:50%;
+      transform:translateX(-50%);
+      background:linear-gradient(90deg, #06b6d4 ,#7c3aed);
+      padding:10px 18px;
+      border-radius:12px;
+      color:#fff;
+      opacity:0;transition:.3s;
+      pointer-events:none;
+    }
+    .toast.show{
+      opacity:1;
+      bottom:36px
+    }
+
+    @media(max-width:920px){
+      .card{grid-template-columns:1fr}
+      form{grid-template-columns:1fr};
+
+
+
+  }
