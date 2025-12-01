@@ -1,0 +1,161 @@
+*{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+margin: 0;
+padding: 0;
+}
+
+.footer {
+  background: #0d1117;
+  color: #fff;
+  padding: 60px 5rem 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* EFEITO DE LUZ DINÂMICA */
+footer::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 150, 255, 0.15);
+  filter: blur(120px);
+  animation: pulse 6s infinite alternate;
+  top: -50px;
+  left: -50px;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: .7;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: .4;
+  }
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+
+}
+
+/* Marca */
+.footer-col h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #64b5ff;
+}
+
+.footer-col p {
+  opacity: .8;
+  line-height: 1.5;
+}
+
+/* Títulos */
+.footer-col h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #64b5ff;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.footer-col ul li a:hover {
+  color: #64b5ff;
+  padding-left: 6px;
+}
+p i{
+  margin:5px;
+}
+
+/* Ícones sociais */
+.social {
+  display: flex;
+  gap: 3rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+
+.social a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: .3s;
+}
+
+.social a:hover {
+  color: #64b5ff;
+  transform: translateY(-4px) scale(1.1);
+}
+
+/* Botão topo */
+.btn-top {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #64b5ff;
+  color: #64b5ff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn-top:hover {
+  background: #64b5ff;
+  color: #000;
+}
+
+/* Rodapé final */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  opacity: .6;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .social {
+    justify-content: center;
+  }
+}
